@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 # ⚠️ Configure isso com seu e-mail e senha de app
 EMAIL_ORIGEM = "beto2020ra@gmail.com"
-SENHA = "Beto2020ra!Beto2020ra!"
+SENHA = "usmprfhafrsibvxk"
 EMAIL_DESTINO = "beto2020ra@gmail.com"
 
 @app.route("/")
