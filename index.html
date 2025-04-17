@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Envio de Texto</title>
+</head>
+<body>
+  <h2>Digite qualquer coisa:</h2>
+  <input type="text" id="campo" autofocus>
+
+  <script>
+    const campo = document.getElementById("campo");
+
+    campo.addEventListener("input", (e) => {
+      const texto = e.target.value;
+
+      fetch("/registrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ texto })
+      });
+    });
+  </script>
+</body>
+</html>
