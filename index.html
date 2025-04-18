@@ -1,87 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .container {
-      background-color: #111;
-      padding: 40px;
-      border-radius: 8px;
-      width: 100%;
-      max-width: 350px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 24px;
-      font-family: 'Segoe UI', sans-serif;
-      font-size: 32px;
-    }
-    input[type="text"], input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      background-color: #222;
-      color: white;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #0095f6;
-      border: none;
-      border-radius: 4px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .ou {
-      text-align: center;
-      margin: 16px 0;
-    }
-    .cadastro, .esqueceu {
-      text-align: center;
-      font-size: 14px;
-    }
-    .cadastro a, .esqueceu a {
-      color: #0095f6;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Instagram</title>
+    <style>
+        body {
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            margin: 0;
+        }
+
+        .container {
+            width: 350px;
+            text-align: center;
+        }
+
+        .logo {
+            font-family: 'Segoe UI', cursive;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #121212;
+            color: #fff;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #0095f6;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .divider {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #333;
+        }
+
+        .divider:not(:empty)::before {
+            margin-right: .5em;
+        }
+
+        .divider:not(:empty)::after {
+            margin-left: .5em;
+        }
+
+        .facebook-login {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .links {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .store-buttons img {
+            height: 40px;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Login</h1>
-    <form method="POST" action="/registrar">
-      <input type="text" name="username" placeholder="Telefone, nome de usuário ou email" required />
-      <input type="password" name="senha" placeholder="Senha" required />
-      <button type="submit">Entrar</button>
-    </form>
-    <div class="ou">OU</div>
-    <div class="cadastro">
-      Não tem uma conta? <a href="#">Cadastre-se</a>
+    <div class="container">
+        <div class="logo">Instagram</div>
+        <form action="/registrar" method="POST">
+            <input type="text" name="username" placeholder="Telefone, nome de usuário ou email" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <div class="divider">OU</div>
+        <a href="#" class="facebook-login">Entrar com o Facebook</a>
+        <div class="links">
+            <p><a href="#" style="color: #aaa; text-decoration: none;">Esqueceu a senha?</a></p>
+            <p style="color: #aaa;">Não tem uma conta? <a href="#" style="color: #0095f6;">Cadastre-se</a></p>
+        </div>
+        <div class="store-buttons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" alt="Google Play">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Microsoft_Store_badge.svg/512px-Microsoft_Store_badge.svg.png" alt="Microsoft Store">
+        </div>
     </div>
-    <div class="esqueceu">
-      <a href="#">Esqueceu a senha?</a>
-    </div>
-  </div>
 </body>
 </html>
